@@ -3,7 +3,7 @@ module.exports = {
   embedColor: '#5865F2', // Discord Blurple
   footer: 'Made by Izzy | Coders Planet',
   statusMessages: {
-    online: 'DM me to create a ticket!',
+    online: 'DM me for assistance!',
     idle: 'Watching for new ModMail tickets'
   },
   cooldowns: {
