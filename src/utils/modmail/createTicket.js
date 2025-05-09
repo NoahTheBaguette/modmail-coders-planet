@@ -318,14 +318,12 @@ async function createTicket(message, client) {
     }
 
     // Send staff notification with or without ping
-    if (pingStaff) {
+ 
       await channel.send({
         content: `<@&${guildConfig.staffRoleId}>`,
         embeds: [staffEmbed]
       });
-    } else {
-      await channel.send({ embeds: [staffEmbed] });
-    }
+    
 
     // Log to the log channel if enabled
     const logsEnabled = await ConfigManager.getSetting(
