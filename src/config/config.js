@@ -16,14 +16,14 @@ module.exports = {
     closeConfirmation: true, // require confirmation before closing a ticket
     transcripts: true, // save ticket transcripts
     logsEnabled: true, // enable logging in a designated channel
-    maxOpenTickets: 3, // maximum number of open tickets per user
+    maxOpenTickets: 1, // maximum number of open tickets per user
     autoClose: {
       enabled: true, // automatically close inactive tickets
       inactiveHours: 72 // close tickets inactive for this many hours
     }
   },
   credits: {
-    name: 'Izzy | Coders Planet',
-    website: 'https://discord.gg/codersplanet'
+    name: 'Noah',
+    website: 'Head of Operations'
   }
 }; 
