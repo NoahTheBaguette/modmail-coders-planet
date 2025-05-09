@@ -169,7 +169,7 @@ async function createTicket(message, client) {
     
     let ticketTopic = '';
     
-    if (requireTopic && !message.content.trim()) {
+  
       // Ask for a topic if none provided
       const topicRequest = await message.author.send('Please provide a topic for your ticket:');
       
@@ -191,9 +191,7 @@ async function createTicket(message, client) {
         logger.error('Error collecting topic:', error);
         return message.author.send('There was an error processing your topic. Please try again.');
       }
-    } else {
-      ticketTopic = message.content || 'No topic provided';
-    }
+   
 
     // Get channel name format from settings
     const nameFormat = await ConfigManager.getSetting(
