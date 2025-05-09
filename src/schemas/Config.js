@@ -54,11 +54,11 @@ const configSchema = new mongoose.Schema({
       },
       pingStaff: {
         type: Boolean,
-        default: false
+        default: true
       },
       requireTopic: {
         type: Boolean,
-        default: false
+        default: true
       },
       nameFormat: {
         type: String,
@@ -68,7 +68,7 @@ const configSchema = new mongoose.Schema({
     messages: {
       welcomeMessage: {
         type: String,
-        default: 'Thank you for creating a ticket. The staff team will respond as soon as possible.'
+        default: 'Thank you for creating a ticket. Our staff team will respond as soon as possible.'
       },
       closeMessage: {
         type: String,
