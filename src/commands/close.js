@@ -106,7 +106,7 @@ module.exports = {
             interaction.channel, 
             interaction.client, 
             interaction.user, 
-            reason
+            interaction.reason
           );
           
           if (!result.success) {
