@@ -114,7 +114,10 @@ async function closeTicket(channel, client, closer, reason = '') {
       'settings.tickets.logsEnabled',
       true
     );
-    
+    async function closeTicket(interaction, reason) {
+  // your embed logic
+
+
     if (logsEnabled) {
       const logChannel = guild.channels.cache.get(guildConfig.logChannelId);
       if (logChannel) {
@@ -131,7 +134,7 @@ async function closeTicket(channel, client, closer, reason = '') {
         await logChannel.send({ embeds: [logEmbed] });
       }
     }
-    
+    }
     // Should we generate a transcript?
     const transcripts = await ConfigManager.getSetting(
       guild.id,
