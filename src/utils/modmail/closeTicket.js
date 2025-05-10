@@ -157,7 +157,7 @@ async function closeTicket(channel, client, closer, reason = '') {
         transcript += `Created: ${moment(ticket.createdAt).format('MMM D, YYYY [at] h:mm A')}\n`;
         transcript += `Closed: ${moment(ticket.closedAt).format('MMM D, YYYY [at] h:mm A')}\n`;
         transcript += `Closed by: ${closer.tag} (${closer.id})\n`;
-        transcript += `Reason: ${reason || 'No reason provided'}\n\n`;
+        transcript += `Reason: ${reason}`;
         transcript += `## Messages\n`;
         
         messages.forEach((msg, index) => {
