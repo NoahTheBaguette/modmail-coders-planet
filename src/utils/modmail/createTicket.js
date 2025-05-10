@@ -169,7 +169,32 @@ async function createTicket(message, client) {
     
     let ticketTopic = '';
     
-  
+    if (requireTopic && !message.content.trim()) {
+      // Ask for a topic if none provided
+      const topicRequest = await message.author.send('Please provide a topic for your ticket:');
+      
+      try {
+        // Wait for topic message
+        const collected = await message.author.dmChannel.awaitMessages({
+          filter: m => m.author.id === message.author.id,
+          max: 1,
+          time: 60000
+        });
+        
+        if (collected.size > 0) {
+          const topicMessage = collected.first();
+          ticketTopic = topicMessage.content;
+        } else {
+          return message.author.send('Ticket creation timed out. Please try again with a topic.');
+        }
+      } catch (error) {
+        logger.error('Error collecting topic:', error);
+        return message.author.send('There was an error processing your topic. Please try again.');
+      }
+    } else {
+      ticketTopic = message.content || 'No topic provided';
+    }
+
     
 
     // Get channel name format from settings
